@@ -1,12 +1,17 @@
 import React from "react";
 
-const Form = ({ input, setInput, todo, setTodo }) => {
+const Form = ({ input, setInput, todos, setTodos }) => {
   const changeInput = (e) => {
     setInput(e.target.value);
   };
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+    setTodos([...todos, { title: input, completed: false }]);
+    setInput("");
+  };
   return (
     <div>
-      <form>
+      <form onSubmit={onSubmitForm}>
         <input
           type='text'
           placeholder='Enter todo'
@@ -15,7 +20,7 @@ const Form = ({ input, setInput, todo, setTodo }) => {
           className='task-input'
           onChange={changeInput}
         />
-        <button className='btn btn-primary' type='add'>
+        <button className='btn btn-primary' type='submit'>
           add
         </button>
       </form>

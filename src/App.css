@@ -10,8 +10,16 @@ body {
   overflow: hidden;
   line-height: 22px;
 }
-.Form {
-  width: 300px;
+.container {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(252, 245, 245);
+}
+.app-wraper {
+  min-width: 300px;
   background: #fff;
   padding: 15px 40px 40px;
   border: 1px solid #ccc;
